@@ -47,11 +47,13 @@
 								tr = $("<option value='" + data[i].COD_TELA + "'>" + data[i].NOMBRE_TELA + "</option>");									
 								$('#tela').append(tr);
 							}
-					}).error(function(jqXHR, textStatus, errorThrown) {
-						alert("error " + textStatus + " incoming Text " + jqXHR.responseText);
-					});
+					}).error(function(data) { alert("error "+ data); });
 					
-					//error(function() { alert("error"); });
+					/*error(function(jqXHR, textStatus, errorThrown) {
+						alert("error " + textStatus + " incoming Text " + jqXHR.responseText);
+					});*/
+					
+					//error(function(data) { alert("error"); });
 					//SEXO
 					$.getJSON('http://egida.cl/RespuestaJSON/sexo.php',function(data){
 					//console.log(JSON.stringify(data));
