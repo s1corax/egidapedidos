@@ -48,6 +48,9 @@
 								$('#tela').append(tr);
 							}
 					});	
+					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
+						alert(data);
+					});	
 					//SEXO
 					$.getJSON('http://egida.cl/RespuestaJSON/sexo.php',function(data){
 					//console.log(JSON.stringify(data));
