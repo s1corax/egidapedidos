@@ -47,7 +47,7 @@
 								tr = $("<option value='" + data[i].COD_TELA + "'>" + data[i].NOMBRE_TELA + "</option>");									
 								$('#tela').append(tr);
 							}
-					}).error(function(data) { alert("error "+ data); });
+					}).error(function(data) { alert("error "+ data[0].COD_TELA); });
 					
 					/*error(function(jqXHR, textStatus, errorThrown) {
 						alert("error " + textStatus + " incoming Text " + jqXHR.responseText);
