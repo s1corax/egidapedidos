@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+    </head>
+    <body onload='init();'>
+        <script type="text/javascript" src="js/cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+		<script>
+			function init(){	
+			
+					$.getJSON('http://localhost/RespuestaJSON/respuesta.php',function(data){
+					
+					
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $('<tr>');
+									tr.append('<td>' + data[i].ID_TELA + '</td>');
+									tr.append('<td>' + data[i].COD_TELA + '</td>');
+									tr.append('<td>' + data[i].NOMBRE_TELA + '</td>');
+								$('#tabla').append(tr);
+							}
+					});	
+					//DISENO
+					//$.getJSON('http://localhost/RespuestaJSON/diseno.php',function(data){
+					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_DISENO + "'>" + data[i].NOMBRE_DISENO + "</option>");									
+								$('#diseno').append(tr);
+							}
+					});	
+					//TELA
+					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
+					$.getJSON('http://localhost/RespuestaJSON/tela.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_TELA + "'>" + data[i].NOMBRE_TELA + "</option>");									
+								$('#tela').append(tr);
+							}
+					});	
+					//SEXO
+					$.getJSON('http://localhost/RespuestaJSON/sexo.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_SEXO + "'>" + data[i].NOMBRE_SEXO + "</option>");									
+								$('#sexo').append(tr);
+							}
+					});	
+					//PRENDA
+					$.getJSON('http://localhost/RespuestaJSON/prenda.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_PRENDA + "'>" + data[i].NOMBRE_PRENDA + "</option>");									
+								$('#prenda').append(tr);
+							}
+					});	
+					//TALLA
+					$.getJSON('http://localhost/RespuestaJSON/talla.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_TALLA + "'>" + data[i].NOMBRE_TALLA + "</option>");									
+								$('#talla').append(tr);
+							}
+					});	
+					//COLOR
+					$.getJSON('http://localhost/RespuestaJSON/color.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_COLOR + "'>" + data[i].NOMBRE_COLOR + "</option>");									
+								$('#color').append(tr);
+							}
+					});	
+					//HILO
+					$.getJSON('http://localhost/RespuestaJSON/hilo.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_HILO + "'>" + data[i].NOMBRE_HILO + "</option>");									
+								$('#hilo').append(tr);
+							}
+					});	
+					//VIVO
+					$.getJSON('http://localhost/RespuestaJSON/vivo.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_VIVO + "'>" + data[i].NOMBRE_VIVO + "</option>");									
+								$('#vivo').append(tr);
+							}
+					});	
+					//ESTAMPADO
+					$.getJSON('http://localhost/RespuestaJSON/estampado.php',function(data){
+					console.log(JSON.stringify(data));
+						var datos;
+						var tr;
+							for (var i = 0; i < data.length; i++){
+								tr = $("<option value='" + data[i].COD_ESTAMPADO + "'>" + data[i].NOMBRE_ESTAMPADO + "</option>");									
+								$('#estampado').append(tr);
+							}
+					});	
+					
+					
+										
+				}
+			</script>
+	EGIDA PEDIDOS		
+	<TABLE style='border:1px solid #330066'>
+<TR>
+	
+	<TD>
+            
+	<TABLE style='border:1px solid #990000'>
+	
+	<!-- Categorias -->
+	<TR>
+		<TD><B>Dise&nacute;o</B></TD>
+		<TD>:</TD>
+		<TD><select name='diseno' id='diseno' >		
+		</select>
+		</TD>	
+	</TR>
+	<TR>
+		<TD><B>Tela</B></TD>
+		<TD>:</TD>
+		<TD><select name='tela' id='tela' >
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Sexo</B></TD>
+		<TD>:</TD>
+		<TD><select name='sexo' id='sexo'>
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Prenda</B></TD>
+		<TD>:</TD>
+		<TD><select name='prenda' id='prenda' >
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Talla</B></TD>
+		<TD>:</TD>
+		<TD><select name='talla' id='talla'>
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Color</B></TD>
+		<TD>:</TD>
+		<TD><select name='color' id='color'>
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Hilo</B></TD>
+		<TD>:</TD>
+		<TD><select name='hilo' id='hilo'>
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Vivo</B></TD>
+		<TD>:</TD>
+		<TD><select name='vivo' id='vivo'>
+		
+		</select>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Estampado</B></TD>
+		<TD>:</TD>
+		<TD><select name='estampado' id='estampado'>
+		
+		</select>
+		</TD>
+	</TR>
+    </table> 		
+    </body>
+</html>
