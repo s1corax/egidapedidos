@@ -7,7 +7,7 @@
     <author email="pablo.jacobi.s@gmail.com" href="http://www.egida.cl">
         Egida Uniforms
     </author>
-    <content src="index.html" />
-    <access origin="egida.cl" />
+    <content src="index.html" /> 
+	<access origin="*" />
 	<allow-navigation href="*"/>
 </widget>
