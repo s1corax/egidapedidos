@@ -8,6 +8,6 @@
         Egida Uniforms
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="egida.cl" />
 	<allow-navigation href="*"/>
 </widget>
