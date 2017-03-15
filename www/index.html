@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-		<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data:">
-
         <title>Egida Pedidos</title>
     </head>
     <body onload='init();'>
@@ -27,7 +27,7 @@
 									tr.append('<td>' + data[i].NOMBRE_TELA + '</td>');
 								$('#tabla').append(tr);
 							}
-					});	*/
+					});
 					//DISENO
 					//$.getJSON('http://localhost/RespuestaJSON/diseno.php',function(data){
 					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
@@ -38,7 +38,7 @@
 								tr = $("<option value='" + data[i].COD_DISENO + "'>" + data[i].NOMBRE_DISENO + "</option>");									
 								$('#diseno').append(tr);
 							}
-					});	/*
+					});	
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
 					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
@@ -49,13 +49,10 @@
 								tr = $("<option value='" + data[i].COD_TELA + "'>" + data[i].NOMBRE_TELA + "</option>");									
 								$('#tela').append(tr);
 							}
-					}).error(function(data) { alert("error "+ data.length); });
-					
-					//error(function(jqXHR, textStatus, errorThrown) {
-					//	alert("error " + textStatus + " incoming Text " + jqXHR.responseText);
-					//});
-					
-					//error(function(data) { alert("error"); });
+					});	
+					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
+						alert(data);
+					});	
 					//SEXO
 					$.getJSON('http://egida.cl/RespuestaJSON/sexo.php',function(data){
 					//console.log(JSON.stringify(data));
@@ -125,9 +122,9 @@
 								tr = $("<option value='" + data[i].COD_ESTAMPADO + "'>" + data[i].NOMBRE_ESTAMPADO + "</option>");									
 								$('#estampado').append(tr);
 							}
-					});	*/
+					});	
 					
-					
+						*/
 										
 				}
 				
@@ -153,7 +150,7 @@
 					
 					$.ajax({
 						type       : "POST",
-						url        : "http://egida.cl/RespuestaJSON/guardar.php",
+						url        : "http://www.egida.cl/RespuestaJSON/guardar.php",
 						data       : {							
 									  institucion : finstitucion,
 									  sector : fsector,
@@ -266,6 +263,7 @@
 		<TD><B>Dise&ntilde;o</B></TD>
 		<TD>:</TD>
 		<TD><select name='diseno' id='diseno' >		
+		<option value="1">Cargo</option>
 		</select>
 		</TD>	
 	</TR>	
@@ -273,7 +271,9 @@
 		<TD><B>Tela</B></TD>
 		<TD>:</TD>
 		<TD><select name='tela' id='tela' >
-		
+		<option value="1">Poplin</option>
+		<option value="2">Gabardina</option>
+		<option value="3">Flex</option>		
 		</select>
 		</TD>
 	</TR>
@@ -281,7 +281,8 @@
 		<TD><B>Sexo</B></TD>
 		<TD>:</TD>
 		<TD><select name='sexo' id='sexo'>
-		
+		<option value="1">Hombre</option>
+		<option value="2">Mujer</option>		
 		</select>
 		</TD>
 	</TR>
@@ -289,7 +290,9 @@
 		<TD><B>Prenda</B></TD>
 		<TD>:</TD>
 		<TD><select name='prenda' id='prenda' >
-		
+		<option value="1">Blusa</option>
+		<option value="2">Pantalon</option>
+		<option value="3">Delantal</option>		
 		</select>
 		</TD>
 	</TR>
@@ -297,6 +300,18 @@
 		<TD><B>Talla</B></TD>
 		<TD>:</TD>
 		<TD><select name='talla' id='talla'>
+		<option value="A">4XS</option>
+		<option value="B">3XS</option>
+		<option value="C">2XS</option>
+		<option value="D">XS</option>
+		<option value="E">S</option>
+		<option value="F">M</option>
+		<option value="G">L</option>
+		<option value="H">XL</option>
+		<option value="I">2XL</option>
+		<option value="J">3XL</option>
+		<option value="K">4XL</option>
+		<option value="L">5XL</option>
 		
 		</select>
 		</TD>
@@ -305,7 +320,17 @@
 		<TD><B>Color</B></TD>
 		<TD>:</TD>
 		<TD><select name='color' id='color'>
-		
+		<option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Plomo</option>
 		</select>
 		</TD>
 	</TR>
@@ -313,6 +338,21 @@
 		<TD><B>Hilo</B></TD>
 		<TD>:</TD>
 		<TD><select name='hilo' id='hilo'>
+		<option value="0">Sin Hilo</option>
+		<option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Lila</option>
+		<option value="C">Fucsia</option>
+		<option value="D">Calipso</option>
+		<option value="E">Plomo</option>
 		
 		</select>
 		</TD>
@@ -321,6 +361,21 @@
 		<TD><B>Vivo</B></TD>
 		<TD>:</TD>
 		<TD><select name='vivo' id='vivo'>
+		<option value="0">Sin Vivo</option>
+		option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Lila</option>
+		<option value="C">Fucsia</option>
+		<option value="D">Calipso</option>
+		<option value="E">Plomo</option>
 		
 		</select>
 		</TD>
@@ -329,7 +384,10 @@
 		<TD><B>Estampado</B></TD>
 		<TD>:</TD>
 		<TD><select name='estampado' id='estampado'>
-		
+		<option value="0">Sin Estampado</option>
+		<option value="1">Flores</option>
+		<option value="2">Enredaderas</option>
+		<option value="3">Ositos</option>
 		</select>
 		</TD>
 	</TR>
