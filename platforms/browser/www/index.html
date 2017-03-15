@@ -1,20 +1,24 @@
 <!DOCTYPE html>
+
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <html>
     <head>
         <meta charset="utf-8">
+	    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"/>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
+        <title>Egida Pedidos</title>
     </head>
     <body onload='init();'>
         <script type="text/javascript" src="js/cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+	
 		<script>
 			function init(){	
 			
-					$.getJSON('http://localhost/RespuestaJSON/respuesta.php',function(data){
+					/*$.getJSON('http://localhost/RespuestaJSON/respuesta.php',function(data){
 					
 					
-					console.log(JSON.stringify(data));
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -24,11 +28,11 @@
 									tr.append('<td>' + data[i].NOMBRE_TELA + '</td>');
 								$('#tabla').append(tr);
 							}
-					});	
+					});
 					//DISENO
 					//$.getJSON('http://localhost/RespuestaJSON/diseno.php',function(data){
 					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
-					console.log(JSON.stringify(data));
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -38,8 +42,8 @@
 					});	
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
-					$.getJSON('http://localhost/RespuestaJSON/tela.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -47,9 +51,12 @@
 								$('#tela').append(tr);
 							}
 					});	
+					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
+						alert(data);
+					});	
 					//SEXO
-					$.getJSON('http://localhost/RespuestaJSON/sexo.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/sexo.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -58,8 +65,8 @@
 							}
 					});	
 					//PRENDA
-					$.getJSON('http://localhost/RespuestaJSON/prenda.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/prenda.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -68,8 +75,8 @@
 							}
 					});	
 					//TALLA
-					$.getJSON('http://localhost/RespuestaJSON/talla.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/talla.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -78,8 +85,8 @@
 							}
 					});	
 					//COLOR
-					$.getJSON('http://localhost/RespuestaJSON/color.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/color.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -88,8 +95,8 @@
 							}
 					});	
 					//HILO
-					$.getJSON('http://localhost/RespuestaJSON/hilo.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/hilo.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -98,8 +105,8 @@
 							}
 					});	
 					//VIVO
-					$.getJSON('http://localhost/RespuestaJSON/vivo.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/vivo.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -108,8 +115,8 @@
 							}
 					});	
 					//ESTAMPADO
-					$.getJSON('http://localhost/RespuestaJSON/estampado.php',function(data){
-					console.log(JSON.stringify(data));
+					$.getJSON('http://egida.cl/RespuestaJSON/estampado.php',function(data){
+					//console.log(JSON.stringify(data));
 						var datos;
 						var tr;
 							for (var i = 0; i < data.length; i++){
@@ -118,11 +125,115 @@
 							}
 					});	
 					
-					
+						*/
 										
 				}
+				
+			$(function(){	
+				$("#guardardatos").click(function(){
+				
+					var finstitucion = $("#institucion").val();
+					var fsector = $("#sector").val();
+					var ffono = $("#fono").val();					
+					var fcomentario = $("#comentario").val();
+					var fvendedor = 1;
+					
+					var fdiseno = $("#diseno").val();
+					var ftela = $("#tela").val();
+					var fsexo = $("#sexo").val();
+					var fprenda = $("#prenda").val();
+					var fcolor = $("#color").val();
+					var fhilo = $("#hilo").val();
+					var fvivo = $("#vivo").val();
+					var festampado = $("#estampado").val();
+					
+					
+					
+					$.ajax({
+						type       : "POST",
+						url        : "http://www.egida.cl/RespuestaJSON/guardar.php",
+						data       : {							
+									  institucion : finstitucion,
+									  sector : fsector,
+									  fono : ffono,
+									  comentario : fcomentario,
+									  vendedor : fvendedor,
+									  diseno : fdiseno,
+									  tela : ftela,
+									  sexo : fsexo,
+									  prenda : fprenda,
+									  color : fcolor,
+									  hilo : fhilo,
+									  vivo : fvivo,
+									  estampado : festampado
+									  
+									  },
+						dataType: 'text',
+						cache: false,	
+						success    : function(response) {
+						console.error(JSON.stringify(response));
+							alert('Pedido Enviado!');
+							
+						},
+						error      : function(response) {
+							//console.error("error");
+							alert(JSON.stringify(response)); 
+							//alert('Error en el Pedido!');                  
+						}	
+					}); 
+				});		
+
+			});		
 			</script>
-	EGIDA PEDIDOS		
+			<!-- <script>
+				$.ajax({
+					type       : "POST",
+					url        : "http://localhost/RespuestaJSON/guardar.php",
+					crossDomain: true,
+					beforeSend : function() {$.mobile.loading('show')},
+					complete   : function() {$.mobile.loading('hide')},
+					data       : {username : 'subin', password : 'passwordx'},
+					dataType: 'jsonp',
+					cache: false,
+					success    : function(response) {
+						//console.error(JSON.stringify(response));
+						alert('Works!');
+					},
+					error      : function() {
+						//console.error("error");
+						alert('Not working!');                  
+					}
+				});     
+        </script> 
+		
+		<script type="text/javascript">
+         
+            function submitForm() {
+                 
+                var uname = $('[name="username"]').val();
+                var _email = $('[name="email"]').val();
+                 
+                window.localStorage.setItem("username", uname);
+                window.localStorage['email'] = _email;
+                 
+                $.mobile.changePage( "#page2", { reverse: false, transition: "slide" } );
+                 
+                $('#output').html("Username: " + window.localStorage.getItem("username") + "<br>" + 
+                                    "Email: " + window.localStorage["email"]
+                                );
+                     
+                return false;
+            }
+ 
+ 
+        </script>-->
+  <div data-theme="b" data-role="header">
+                <h1><font color="blue">EGIDA PEDIDOS</font></h1>
+            </div>		
+		
+<div data-role="content">	
+<form method="POST" onsubmit="return submitForm()">	
+
 	<TABLE style='border:1px solid #330066'>
 <TR>
 	
@@ -131,18 +242,40 @@
 	<TABLE style='border:1px solid #990000'>
 	
 	<!-- Categorias -->
+	
 	<TR>
-		<TD><B>Dise&nacute;o</B></TD>
+		<TD><B>Instituci&oacute;n</B></TD>
+		<TD>:</TD>
+		<TD><input type="text" name='institucion' id='institucion' >		
+		</TD>	
+	</TR>	
+	<TR>
+		<TD><B>Sector</B></TD>
+		<TD>:</TD>
+		<TD><input type="text" name='sector' id='sector' >		
+		</TD>	
+	</TR>	
+	<TR>
+		<TD><B>Tel&eacute;fono</B></TD>
+		<TD>:</TD>
+		<TD><input type="text" name='fono' id='fono' >		
+		</TD>	
+	</TR>	
+	<TR>
+		<TD><B>Dise&ntilde;o</B></TD>
 		<TD>:</TD>
 		<TD><select name='diseno' id='diseno' >		
+		<option value="1">Cargo</option>
 		</select>
 		</TD>	
-	</TR>
+	</TR>	
 	<TR>
 		<TD><B>Tela</B></TD>
 		<TD>:</TD>
 		<TD><select name='tela' id='tela' >
-		
+		<option value="1">Poplin</option>
+		<option value="2">Gabardina</option>
+		<option value="3">Flex</option>		
 		</select>
 		</TD>
 	</TR>
@@ -150,7 +283,8 @@
 		<TD><B>Sexo</B></TD>
 		<TD>:</TD>
 		<TD><select name='sexo' id='sexo'>
-		
+		<option value="1">Hombre</option>
+		<option value="2">Mujer</option>		
 		</select>
 		</TD>
 	</TR>
@@ -158,7 +292,9 @@
 		<TD><B>Prenda</B></TD>
 		<TD>:</TD>
 		<TD><select name='prenda' id='prenda' >
-		
+		<option value="1">Blusa</option>
+		<option value="2">Pantalon</option>
+		<option value="3">Delantal</option>		
 		</select>
 		</TD>
 	</TR>
@@ -166,6 +302,18 @@
 		<TD><B>Talla</B></TD>
 		<TD>:</TD>
 		<TD><select name='talla' id='talla'>
+		<option value="A">4XS</option>
+		<option value="B">3XS</option>
+		<option value="C">2XS</option>
+		<option value="D">XS</option>
+		<option value="E">S</option>
+		<option value="F">M</option>
+		<option value="G">L</option>
+		<option value="H">XL</option>
+		<option value="I">2XL</option>
+		<option value="J">3XL</option>
+		<option value="K">4XL</option>
+		<option value="L">5XL</option>
 		
 		</select>
 		</TD>
@@ -174,7 +322,17 @@
 		<TD><B>Color</B></TD>
 		<TD>:</TD>
 		<TD><select name='color' id='color'>
-		
+		<option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Plomo</option>
 		</select>
 		</TD>
 	</TR>
@@ -182,6 +340,21 @@
 		<TD><B>Hilo</B></TD>
 		<TD>:</TD>
 		<TD><select name='hilo' id='hilo'>
+		<option value="0">Sin Hilo</option>
+		<option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Lila</option>
+		<option value="C">Fucsia</option>
+		<option value="D">Calipso</option>
+		<option value="E">Plomo</option>
 		
 		</select>
 		</TD>
@@ -190,6 +363,21 @@
 		<TD><B>Vivo</B></TD>
 		<TD>:</TD>
 		<TD><select name='vivo' id='vivo'>
+		<option value="0">Sin Vivo</option>
+		option value="1">Azul Marino </option>
+		<option value="2">Azul Rey</option>
+		<option value="3">Burdeo</option>
+		<option value="4">Morado</option>
+		<option value="5">Rojo</option>
+		<option value="6">Blanco</option>
+		<option value="7">Celeste Jacinto</option>
+		<option value="8">Celeste</option>
+		<option value="9">Negro</option>
+		<option value="A">Caribean Blue</option>
+		<option value="B">Lila</option>
+		<option value="C">Fucsia</option>
+		<option value="D">Calipso</option>
+		<option value="E">Plomo</option>
 		
 		</select>
 		</TD>
@@ -198,10 +386,24 @@
 		<TD><B>Estampado</B></TD>
 		<TD>:</TD>
 		<TD><select name='estampado' id='estampado'>
-		
+		<option value="0">Sin Estampado</option>
+		<option value="1">Flores</option>
+		<option value="2">Enredaderas</option>
+		<option value="3">Ositos</option>
 		</select>
 		</TD>
 	</TR>
-    </table> 		
+	<TR>
+		<TD><B>Comentario</B></TD>
+		<TD>:</TD>
+		<TD><input type="text" name='comentario' id='comentario' >		
+		</TD>	
+	</TR>	
+    </table> 
+<button type="button" id="guardardatos">Enviar</button>
+</form>	
+  </div>
+
+
     </body>
 </html>
