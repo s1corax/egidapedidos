@@ -174,9 +174,10 @@
 							alert('Pedido Enviado!');
 							
 						},
-						error      : function() {
+						error      : function(response) {
 							//console.error("error");
-							alert('Error en el Pedido!');                  
+							alert(JSON.stringify(response)); 
+							//alert('Error en el Pedido!');                  
 						}	
 					}); 
 				});		
