@@ -42,7 +42,15 @@
 														
 								//$('#diseno2').append(data);
 							document.getElementById("diseno2").value = data[0].NOMBRE_DISENO;
-					});	/*
+					})					
+					.done(function() {
+						console.log( "second success" );
+						document.getElementById("diseno2").value = "second success";
+					  })
+					  .fail(function(jqXHR, textStatus, errorThrown) {
+						console.log( "error" );
+						document.getElementById("diseno2").value = "error: "+textStatus;
+					  });/*
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
 					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
