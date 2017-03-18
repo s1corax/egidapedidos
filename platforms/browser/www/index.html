@@ -34,11 +34,9 @@
 					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
 					//console.log(JSON.stringify(data));
 						var datos;
-						var tr;
-							for (var i = 0; i < data.length; i++){
-								tr = $("<option value='" + data[i].COD_DISENO + "'>" + data[i].NOMBRE_DISENO + "</option>");									
-								$('#diseno2').append(tr);
-							}
+														
+								//$('#diseno2').append(data);
+							document.getElementById("diseno2").value = data[0].NOMBRE_DISENO;
 					});	/*
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
@@ -272,9 +270,9 @@
 	<TR>
 		<TD><B>Dise&ntilde;o2</B></TD>
 		<TD>:</TD>
-		<TD><select name='diseno2' id='diseno2' >		
+		<TD><input type="text" name='diseno2' id='diseno2' />		
 		
-		</select>
+		
 		</TD>	
 	</TR>	
 	<TR>
