@@ -28,7 +28,7 @@
 									tr.append('<td>' + data[i].NOMBRE_TELA + '</td>');
 								$('#tabla').append(tr);
 							}
-					});
+					});*/
 					//DISENO
 					//$.getJSON('http://localhost/RespuestaJSON/diseno.php',function(data){
 					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
@@ -37,9 +37,9 @@
 						var tr;
 							for (var i = 0; i < data.length; i++){
 								tr = $("<option value='" + data[i].COD_DISENO + "'>" + data[i].NOMBRE_DISENO + "</option>");									
-								$('#diseno').append(tr);
+								$('#diseno2').append(tr);
 							}
-					});	
+					});	/*
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
 					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
@@ -266,6 +266,14 @@
 		<TD>:</TD>
 		<TD><select name='diseno' id='diseno' >		
 		<option value="1">Cargo</option>
+		</select>
+		</TD>	
+	</TR>	
+	<TR>
+		<TD><B>Dise&ntilde;o2</B></TD>
+		<TD>:</TD>
+		<TD><select name='diseno2' id='diseno2' >		
+		
 		</select>
 		</TD>	
 	</TR>	
