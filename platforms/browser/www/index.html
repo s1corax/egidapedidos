@@ -39,8 +39,9 @@
 									//Here you can implement your client side logic.
 								});*/
 							},
-							error: function() {
-								alert("There was an error loading the feed");
+							error: function(xhr, textStatus, error) {
+
+								alert("xhr: "+xhr.statusText+"textStatus: "+textStatus+"error: "+error );
 							}
 						});
 
