@@ -20,6 +20,30 @@
 		<script>
 			function init(){	
 			
+			
+					
+						$.ajax({
+							async: true,
+							type: "GET",
+							url: "http://egida.cl/RespuestaJSON/diseno.php",
+							dataType: "json",
+							success: function(data, textStatus, jqXHR) {
+								//alert(data[0].NOMBRE_DISENO);
+								for (var i = 0; i < data.length; i++){
+									tr = $("<option value='" + data[i].COD_DISENO + "'>" + data[i].NOMBRE_DISENO + "</option>");									
+									$('#diseno2').append(tr);
+								}
+								/*$.each(data.result, function(i, item) {
+									alert(data.result[i].NOMBRE_DISENO);
+									document.getElementById("diseno2").value = data.result[i].NOMBRE_DISENO;
+									//Here you can implement your client side logic.
+								});*/
+							},
+							error: function() {
+								alert("There was an error loading the feed");
+							}
+						});
+
 					/*$.getJSON('http://localhost/RespuestaJSON/respuesta.php',function(data){
 					
 					
@@ -33,7 +57,7 @@
 									tr.append('<td>' + data[i].NOMBRE_TELA + '</td>');
 								$('#tabla').append(tr);
 							}
-					});*/
+					});
 					//DISENO
 					//$.getJSON('http://localhost/RespuestaJSON/diseno.php',function(data){
 					$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){					
@@ -50,7 +74,7 @@
 					  .fail(function(jqXHR, textStatus, errorThrown) {
 						console.log( "error" );
 						document.getElementById("diseno2").value = "jqXHR: "+jqXHR+ "textStatus: "+ textStatus + "errorThrown: "+errorThrown;
-					  });/*
+					  });
 					//TELA
 					//$.getJSON('http://egida.cl/RespuestaJSON/diseno.php',function(data){	
 					$.getJSON('http://egida.cl/RespuestaJSON/tela.php',function(data){
@@ -283,7 +307,11 @@
 	<TR>
 		<TD><B>Dise&ntilde;o2</B></TD>
 		<TD>:</TD>
-		<TD><input type="text" name='diseno2' id='diseno2' />		
+		<TD>
+			<select name='diseno2' id='diseno2' >		
+		
+		</select>
+		
 		
 		
 		</TD>	
