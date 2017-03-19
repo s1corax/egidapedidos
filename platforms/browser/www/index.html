@@ -39,11 +39,17 @@
 									//Here you can implement your client side logic.
 								});*/
 							},
-							error: function(xhr, textStatus, error) {
+							
+							error:function (xhr, ajaxOptions, thrownError){
+										if(xhr.status==404) {
+											alert(thrownError);
+										}
+								}
+							/*error: function(xhr, textStatus, error) {
 
 								alert("xhr status: "+xhr.status+"textStatus: "+textStatus+"error: "+error );
 								
-							}
+							}*/
 						});
 
 					/*$.getJSON('http://localhost/RespuestaJSON/respuesta.php',function(data){
