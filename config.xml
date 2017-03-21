@@ -9,16 +9,16 @@
     </author>
     <content src="index.html" /> 
 	<access origin="*" />
-	<!--<access origin="http://www.egida.cl" subdomains="true" />
-	<allow-navigation href="http://www.egida.cl"/>
-	<!--<allow-intent href="http://*/*" />
+	<allow-navigation href="*"/>
+	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
 	<allow-intent href="tel:*" />
 	<allow-intent href="sms:*" />
 	<allow-intent href="mailto:*" />
 	<allow-intent href="geo:*" />
 	<allow-intent href="*" />
-	<platform name="ios" />
-	<platform name="android"/>
-	<!--<plugin name="cordova-plugin-whitelist" /> -->
+
+	<platform name="android">
+		<allow-intent href="market:*" />
+	</platform>
 </widget>
