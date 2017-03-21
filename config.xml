@@ -17,7 +17,7 @@
 	<allow-intent href="sms:*" />
 	<allow-intent href="mailto:*" />
 	<allow-intent href="geo:*" />
-	<allow-intent href="*" /> -->
+	<allow-intent href="*" />
 	<platform name="ios" />
 	<platform name="android"/>
 	<!--<plugin name="cordova-plugin-whitelist" /> -->
