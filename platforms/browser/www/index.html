@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 
 <?php
-     header('Access-Control-Allow-Origin: *'); 
+     /*header('Access-Control-Allow-Origin: *'); 
      header('Access-Control-Allow-Credentials: true');    
-     header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); 
+     header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); */
 
 ?>
 <html>
     <head>
         <meta charset="utf-8">
-		 <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' http://egida.cl/RespuestaJSON/"/>-->
+		 <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' http://egida.cl/RespuestaJSON/"/>
 
-	   <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"/>
+	   <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"/>-->
+	      <meta http-equiv="Content-Security-Policy" content="default-src 'self' egida.cl">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Egida Pedidos</title>
     </head>
@@ -28,7 +29,7 @@
 							async: true,
 							type: "GET",
 							url: "http://egida.cl/RespuestaJSON/diseno.php",
-							dataType: "json",
+							dataType: "jsonp",
 							success: function(data, textStatus, jqXHR) {
 								//alert(data[0].NOMBRE_DISENO);
 								for (var i = 0; i < data.length; i++){

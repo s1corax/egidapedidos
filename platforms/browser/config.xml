@@ -8,13 +8,6 @@
         Egida Uniforms
     </author>
     <content src="index.html" />
-    <access origin="http://www.egidas.cl" subdomains="true" />
-    <allow-navigation href="http://www.egidas.cl" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <allow-intent href="*" />
+    <access origin="*" />
+    <allow-navigation href="*" />
 </widget>
