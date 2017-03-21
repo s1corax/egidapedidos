@@ -20,5 +20,5 @@
 	<allow-intent href="*" /> -->
 	<platform name="ios" />
 	<platform name="android"/>
-	<plugin name="cordova-plugin-whitelist" />
+	<!--<plugin name="cordova-plugin-whitelist" /> -->
 </widget>
