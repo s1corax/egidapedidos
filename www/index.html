@@ -28,7 +28,7 @@
 							async: true,
 							type: "GET",
 							url: "http://egida.cl/RespuestaJSON/diseno.php",
-							dataType: "json",
+							dataType: "jsonp",
 							success: function(data, textStatus, jqXHR) {
 								//alert(data[0].NOMBRE_DISENO);
 								for (var i = 0; i < data.length; i++){

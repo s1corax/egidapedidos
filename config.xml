@@ -8,8 +8,8 @@
         Egida Uniforms
     </author>
     <content src="index.html" /> 
-	<!--<access origin="*" /
-	<access origin="http://www.egida.cl" subdomains="true" />
+	<access origin="*" />
+	<!--<access origin="http://www.egida.cl" subdomains="true" />
 	<allow-navigation href="http://www.egida.cl"/>
 	<!--<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
